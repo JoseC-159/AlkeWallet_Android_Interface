@@ -12,7 +12,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlkeWalletInterface">
         <activity
-            android:name=".MainActivity"
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RequestMoneyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SendMoneyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeEmptyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginSignupActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AlkeWalletInterface" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
