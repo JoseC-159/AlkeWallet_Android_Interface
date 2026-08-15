@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3A404A"> <!-- Fondo Plomo -->
+
+    <!-- Header: Saludo, Avatar y Notificación -->
+    <ImageView
+        android:id="@+id/imgProfileHomeEmpty"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Foto de perfil"
+        android:src="@drawable/ic_avatar_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtGreetingEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="¡Hola,"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/imgProfileHomeEmpty"
+        app:layout_constraintTop_toTopOf="@+id/imgProfileHomeEmpty" />
+
+    <TextView
+        android:id="@+id/txtUserNameEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario!"
+        android:textColor="#FFFF00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtGreetingEmpty"
+        app:layout_constraintTop_toBottomOf="@+id/txtGreetingEmpty" />
+
+    <ImageView
+        android:id="@+id/icNotificationEmpty"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="Notificaciones"
+        android:src="@drawable/notifications_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProfileHomeEmpty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgProfileHomeEmpty" />
+
+    <!-- Sección de Saldo/Balance -->
+    <TextView
+        android:id="@+id/txtBalanceLabelEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Balance Total"
+        android:textColor="#CCCCCC"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/imgProfileHomeEmpty"
+        app:layout_constraintTop_toBottomOf="@+id/imgProfileHomeEmpty" />
+
+    <TextView
+        android:id="@+id/txtBalanceAmountEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$0.00"
+        android:textColor="#FFFF00"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtBalanceLabelEmpty"
+        app:layout_constraintTop_toBottomOf="@+id/txtBalanceLabelEmpty" />
+
+    <!-- Sector Blanco Inferior con Estado Vacío -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBalanceAmountEmpty">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Botones de Acción -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSendMoneyEmpty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_rounded_accent"
+                    android:text="Enviar dinero"
+                    android:textAllCaps="false"
+                    android:textColor="#3A404A"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRequestMoneyEmpty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_rounded_primary"
+                    android:text="Ingresar dinero"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFF00"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Últimas transacciones"
+                android:textColor="#3A404A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Contenido del Caso Vacío (Icono y Mensaje) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Sin transacciones"
+                    android:src="@drawable/ic_empty_history"
+                    app:tint="#CCCCCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="No tienes transacciones recientes"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
