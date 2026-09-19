@@ -1,4 +1,4 @@
-package com.mcu.alkewalletinterface;
+package com.mcu.alkewalletinterface.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.mcu.alkewalletinterface.R;
+import com.mcu.alkewalletinterface.controller.WalletController;
+
 public class SignupFragment extends Fragment {
 
     @Nullable
@@ -20,6 +23,14 @@ public class SignupFragment extends Fragment {
         Button btnRegister = view.findViewById(R.id.btnRegister);
         if (btnRegister != null) {
             btnRegister.setOnClickListener(v -> {
+
+                //Llamar al controlador
+                WalletController walletController = new WalletController();
+
+                //Simular la creación y el inicio de sesión de un usuario de prueba (por ahora)
+                walletController.crearSesionDePrueba();
+
+                // Pasar al Home
                 Intent intent = new Intent(getActivity(), HomeActivity.class);
                 startActivity(intent);
             });

@@ -23,34 +23,39 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
         android:hint="Email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editLoginEmail"
+            android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:clickable="true"
+            android:imeOptions="actionNext" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo Contraseña con Toggle de Visibilidad -->
+    <!-- Campo Contraseña -->
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:background="#FFFFFF"
-        android:hint="Contraseña"
-        app:passwordToggleEnabled="true">
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
+        app:passwordToggleEnabled="true"
+        android:hint="Contraseña">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editLoginPassword"
+            android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Texto Olvidaste tu contraseña -->
     <TextView
         android:id="@+id/txtForgotPassword"
         android:layout_width="wrap_content"
@@ -65,21 +70,11 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/btn_rounded_primary"
         android:text="Iniciar Sesión"
         android:textAllCaps="false"
         android:textColor="#FFFF00"
         android:textSize="16sp" />
-
-    <!-- Botón Secundario: Crear nueva cuenta -->
-    <Button
-        android:id="@+id/btnGoToSignup"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Crear una nueva cuenta"
-        android:textColor="#3A404A" />
 
 </LinearLayout>

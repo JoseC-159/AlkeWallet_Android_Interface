@@ -1,4 +1,4 @@
-package com.mcu.alkewalletinterface;
+package com.mcu.alkewalletinterface.view;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -7,9 +7,8 @@ import android.os.Looper;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.mcu.alkewalletinterface.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -23,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             Intent intent = new Intent(SplashActivity.this, LoginSignupActivity.class);
             startActivity(intent);
-            finish(); // Cierra Splash para que no vuelva al presionar atrás
+            finish();
         }, 2000);
     }
 }

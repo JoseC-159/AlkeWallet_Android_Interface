@@ -35,6 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Icono de Edición (Lápiz) -->
+    <!--
     <ImageView
         android:id="@+id/btnEditProfile"
         android:layout_width="24dp"
@@ -45,7 +46,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/txtProfileTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtProfileTitle" />
-
+    -->
     <!-- Avatar de Perfil con Marco -->
     <ImageView
         android:id="@+id/imgProfileLarge"
@@ -64,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Juanito Perez"
+        android:text="Usuario"
         android:textColor="#FFFF00"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -90,12 +91,15 @@
 
             <!-- Opción 1: Mi Información -->
             <LinearLayout
+                android:id="@+id/btnMyInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#F5F5F5"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="0dp"
@@ -107,22 +111,54 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/arrowMyInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=">"
+                    android:text="▼"
                     android:textColor="#888888"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Detalle: Mi Información -->
+            <LinearLayout
+                android:id="@+id/layoutMyInfoDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FAFAFA"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txtInfoFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre: -"
+                    android:textColor="#555555"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtInfoEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Correo: -"
+                    android:textColor="#555555"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Opción 2: Mis Tarjetas -->
             <LinearLayout
+                android:id="@+id/btnMyCards"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:background="#F5F5F5"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="0dp"
@@ -134,14 +170,56 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/arrowMyCards"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=">"
+                    android:text="▼"
                     android:textColor="#888888"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Opción 3: Opciones -->
+            <!-- Detalle: Mis Tarjetas (Oculto por defecto) -->
+            <LinearLayout
+                android:id="@+id/layoutMyCardsDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FAFAFA"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <!-- Simulamos un icono de tarjeta con un texto -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💳"
+                    android:textSize="24sp"
+                    android:layout_marginEnd="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tarjeta de Débito (Virtual)"
+                        android:textColor="#3A404A"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="**** **** **** 4589"
+                        android:textColor="#888888"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Opción 3: Cambiar Moneda (Se queda siempre visible, no es desplegable) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,34 +227,37 @@
                 android:background="#F5F5F5"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="12dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Opciones"
+                    android:text="Moneda de la cuenta"
                     android:textColor="#3A404A"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:paddingStart="4dp"/>
 
-                <TextView
+                <Spinner
+                    android:id="@+id/spinnerCurrency"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=">"
-                    android:textColor="#888888"
-                    android:textSize="18sp" />
+                    android:backgroundTint="#3A404A"/>
             </LinearLayout>
 
             <!-- Opción 4: Centro de Ayuda -->
             <LinearLayout
+                android:id="@+id/btnHelpCenter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:background="#F5F5F5"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="0dp"
@@ -188,11 +269,39 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/arrowHelpCenter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=">"
+                    android:text="▼"
                     android:textColor="#888888"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Detalle: Centro de Ayuda (Oculto por defecto) -->
+            <LinearLayout
+                android:id="@+id/layoutHelpCenterDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FAFAFA"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Comunícate con nuestro soporte:"
+                    android:textColor="#555555"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="📞 +56 9 1234 5678\n✉️ soporte@alkewallet.com"
+                    android:textColor="#3A404A"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <!-- Opción 5: Cerrar Sesión (Logout) -->

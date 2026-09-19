@@ -2,106 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingVertical="12dp">
+    android:padding="16dp">
 
-    <!-- Ícono del usuario involucrado -->
-    <!-- Lista Fija de Transacciones en XML -->
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Ícono genérico para la transacción -->
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#E0E0E0"
+        android:contentDescription="Icono transacción"
+        android:padding="8dp"
+        android:src="@android:drawable/ic_menu_sort_by_size" />
+
+    <!-- Textos centrales (Concepto y Fecha) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
         android:orientation="vertical">
 
-        <!-- Transacción 1: Salida de dinero -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txtTxTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingVertical="10dp">
+            android:text="Nombre o Concepto"
+            android:textColor="#3A404A"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_avatar_placeholder" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Carlos Mendoza"
-                    android:textColor="#3A404A"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ayer, 18:20 hrs"
-                    android:textColor="#888888"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="-$120.00"
-                android:textColor="#E53935"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Transacción 2: Entrada de dinero -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txtTxDate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingVertical="10dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_avatar_placeholder" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="María Silva"
-                    android:textColor="#3A404A"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12 de Agosto"
-                    android:textColor="#888888"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+$250.00"
-                android:textColor="#4CAF50"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
+            android:layout_marginTop="4dp"
+            android:text="01/01/2026 12:00"
+            android:textColor="#888888"
+            android:textSize="12sp" />
     </LinearLayout>
+
+    <!-- Monto -->
+    <TextView
+        android:id="@+id/txtTxAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$ 0.00"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
 </LinearLayout>

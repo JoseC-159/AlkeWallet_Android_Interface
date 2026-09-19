@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="2.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mcu.alkewalletinterface">
 
     <application
         android:allowBackup="true"
@@ -12,32 +13,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlkeWalletInterface">
         <activity
-            android:name=".SignUpActivity"
+            android:name=".view.RequestMoneyActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.SendMoneyActivity"
             android:exported="false" />
         <activity
-            android:name=".RequestMoneyActivity"
+            android:name=".view.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".SendMoneyActivity"
+            android:name=".view.HomeEmptyActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".view.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeEmptyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginSignupActivity"
+            android:name=".view.LoginSignupActivity"
             android:exported="false"
             android:theme="@style/Theme.AlkeWalletInterface" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".view.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
