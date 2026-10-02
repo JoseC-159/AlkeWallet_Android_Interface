@@ -13,7 +13,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:contentDescription="Foto de perfil"
-        android:src="@drawable/ic_avatar_placeholder"
+        android:src="@drawable/alkewallet_user_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

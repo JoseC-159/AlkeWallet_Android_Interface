@@ -70,11 +70,19 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/btn_rounded_primary"
         android:text="Iniciar Sesión"
         android:textAllCaps="false"
         android:textColor="#FFFF00"
         android:textSize="16sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:indeterminateTint="#3A404A"
+        android:visibility="gone" />
 
 </LinearLayout>

@@ -26,6 +26,7 @@
             android:background="@android:color/white"
             android:hint="Nombre">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtSignupName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusable="true"
@@ -40,10 +41,10 @@
             android:layout_marginTop="8dp"
             app:boxBackgroundColor="#FFFFFF"
             app:boxBackgroundMode="outline"
-            app:passwordToggleEnabled="true"
             android:hint="Apellido">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtSignupLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusable="true"
@@ -58,9 +59,9 @@
             android:layout_marginTop="8dp"
             app:boxBackgroundColor="#FFFFFF"
             app:boxBackgroundMode="outline"
-            app:passwordToggleEnabled="true"
             android:hint="Email">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtSignupEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
@@ -75,15 +76,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:boxBackgroundColor="#FFFFFF"
-            app:boxBackgroundMode="outline"
             app:passwordToggleEnabled="true"
             android:hint="Contraseña">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtSignupPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:focusable="true"
-                android:focusableInTouchMode="true" />
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Reingresar Contraseña -->
@@ -97,11 +96,10 @@
             app:passwordToggleEnabled="true"
             android:hint="Reingresar contraseña">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtSignupConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:focusable="true"
-                android:focusableInTouchMode="true"                />
+                android:inputType="textPassword"               />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Botón Primario: Crear Cuenta -->
@@ -115,5 +113,13 @@
             android:textAllCaps="false"
             android:textColor="#FFFF00"
             android:textSize="16sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBarSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:indeterminateTint="#3A404A"
+            android:visibility="gone" />
 
     </LinearLayout>
